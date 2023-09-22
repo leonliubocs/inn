@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    username: root
+    password: bocs2581
+    url: jdbc:mysql://localhost:3306/company?serverTimezone=UTC-7&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  #关闭模版引擎的缓存
+  thymeleaf:
+    cache: false
+  mvc:
+    format:
+      date: MM/dd/YYYY
+  messages:
+    basename: i18n.login
+
+
+# 整合mybatis
+mybatis:
+  type-aliases-package: com.bocs.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
+server:
+  servlet:
+    context-path: /inn
+
+
