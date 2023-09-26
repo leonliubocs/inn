@@ -28,6 +28,7 @@ public class LoginController {
             ) {
         Staff staff = staffMapper.queryStaffByUsernameAndPassword(username, password);
         if(staff!=null) {
+            System.out.println("username=   "+username);
             session.setAttribute("username",username);
             return "redirect:/main.html";
         }else {
