@@ -95,4 +95,13 @@ public class RoomController {
         return "/room/housekeeping.html";
     }
 
+    //house keeping
+    @GetMapping("/frontdesk")
+    public String queryFrontDeskRoomList(Model model){
+        Collection<Room> rooms = roomMapper.queryRoomList();
+//        Collection<RoomStatus> roomStatus = roomStatusMapper.queryRoomStatusList();
+        model.addAttribute("rooms", rooms);
+        return "/room/frontdesk.html";
+    }
+
 }

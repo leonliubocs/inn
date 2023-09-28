@@ -27,8 +27,10 @@ public class LoginController {
             HttpSession session
             ) {
         Staff staff = staffMapper.queryStaffByUsernameAndPassword(username, password);
-        if(staff!=null) {
+
+        if(staff!=null && staff.isEnable()) {
             session.setAttribute("username",username);
+            session.setAttribute("staff",staff);
             return "redirect:/main.html";
         }else {
             System.out.println(language);

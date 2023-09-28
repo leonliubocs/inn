@@ -14,6 +14,8 @@ public class Staff {
     private String department;
     private String username;
     private String password;
+    private boolean enable;
+    private String privilege;
 
 
 

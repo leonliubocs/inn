@@ -50,8 +50,6 @@
                                         <tr>
                                             <th>Room ID 房间号</th>
                                             <th>Room Status 房间状态</th>
-                                            <th> Clean Start <br/> 打扫开始 </th>
-                                            <th> Clean Complete <br/>打扫完毕 </th>
                                             <th> Checking Start <br/> 检查开始计时 </th>
                                             <th> Checking Complete <br/> 检查完毕 </th>
                                             <th> Maintenance Lost Record <br/> 维修丢失记录 </th>
@@ -64,8 +62,6 @@
                                         <tr th:each="room:${rooms}" >
                                             <td th:text="${room.getRoomId()}" ></td>
                                             <td th:text="${room.getRoomStatus().getRoomStatus()}" ></td>
-                                            <td><a class="btn btn-sm btn-primary" th:href="@{/room-startClean/}+${room.getRoomId()}">Clean Start <br/> 打扫开始</a></td>
-                                            <td><a class="btn btn-sm btn-primary" th:href="@{/room-completeClean/}+${room.getRoomId()}">Clean Complete <br/>打扫完毕 </a></td>
                                             <td><a class="btn btn-sm btn-primary" th:href="@{/room-completeClean/}+${room.getRoomId()}">Checking Start <br/> 检查开始计时</a></td>
                                             <td><a class="btn btn-sm btn-primary" th:href="@{/room-completeClean/}+${room.getRoomId()}">Checking Complete <br/> 检查完毕</a></td>
                                             <td><a class="btn btn-sm btn-danger" th:href="@{/room-completeClean/}+${room.getRoomId()}">Maintenance Lost Record <br/> 维修丢失记录</a></td>

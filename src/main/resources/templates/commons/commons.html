@@ -17,10 +17,10 @@
 
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4">
-                <a >[[${session.username}]]</a>
-                <a>      </a>
-                <a th:href="@{/user/logout}" class=" label label-danger"><strong>    LOGOUT</strong> </a>
-
+                <p th:if="${session.staff != null}" th:text="${session.staff.getPrivilege()}" ></p>
+                <div th:if="${session.username != null}" >
+                   Welcome 欢迎 <a >[[${session.username}]]</a>  <a th:href="@{/user/logout}" class=" label label-danger"><strong>    LOGOUT</strong> </a>
+               </div>
             </div>
 
 
@@ -37,9 +37,15 @@
 
 
         <a th:href="@{/main.html}" th:class="${active=='main.html'?'list-group-item active':'list-group-item'}">My Dashboard 我的首页</a>
-        <a th:href="@{/room}" th:class="${active=='room-list.html'?'list-group-item active':'list-group-item'}">House Management 房间管理</a>
-        <a th:href="@{/housekeeping}" th:class="${active=='housekeeping.html'?'list-group-item active':'list-group-item'}">HouseKeeping 房间打扫</a>
-        <a th:href="@{/room}" th:class="${active=='frontdesk.html'?'list-group-item active':'list-group-item'}">Frontdesk 前台</a>
+        <p th:if="${(session.staff.getPrivilege()).contains('inn-admin')}" >
+            <a th:href="@{/room}" th:class="${active=='room-list.html'?'list-group-item active':'list-group-item'}">House Management 房间管理</a>
+        </p>
+        <p th:if="${(session.staff.getPrivilege()).contains('inn-housekeeping')}" >
+            <a th:href="@{/housekeeping}" th:class="${active=='housekeeping.html'?'list-group-item active':'list-group-item'}">HouseKeeping 房间打扫</a>
+        </p>
+        <p th:if="${(session.staff.getPrivilege()).contains('inn-frontdesk')}" >
+            <a th:href="@{/frontdesk}" th:class="${active=='frontdesk.html'?'list-group-item active':'list-group-item'}">Frontdesk 前台</a>
+        </p>
 <!--        <a href="#" class="list-group-item">Check in and Check out 打卡</a>-->
 
 
