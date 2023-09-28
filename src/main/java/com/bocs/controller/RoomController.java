@@ -86,14 +86,13 @@ public class RoomController {
         return "redirect:/room";
     }
 
-
-
+    //house keeping
     @GetMapping("/housekeeping")
-    public String queryRoomList_housekeeping(Model model){
+    public String queryHouseKeepingRoomList(Model model){
         Collection<Room> rooms = roomMapper.queryRoomList();
 //        Collection<RoomStatus> roomStatus = roomStatusMapper.queryRoomStatusList();
         model.addAttribute("rooms", rooms);
-        return "/housekeeping/housekeeping.html";
+        return "/room/housekeeping.html";
     }
 
 }
