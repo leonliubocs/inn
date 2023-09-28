@@ -30,6 +30,17 @@ public class RoomController {
         return "/room/room-list.html";
     }
 
+
+    @GetMapping("/room/{id}")
+    public String queryRoomList(@PathVariable("id") String id,  Model model){
+        Room room = roomMapper.queryRoomById(id);
+        model.addAttribute("rooms", room);
+        return "/room/room-list.html";
+    }
+
+
+
+
     @GetMapping("/room-add")
     public String toAddRoom(Model model){
         List<RoomStatus> roomStatuses = roomStatusMapper.queryRoomStatusList();

@@ -19,7 +19,7 @@
             <div class="col-lg-4 col-md-4 col-sm-4">
                 <p th:if="${session.staff != null}" th:text="${session.staff.getPrivilege()}" ></p>
                 <div th:if="${session.username != null}" >
-                   Welcome 欢迎 <a >[[${session.username}]]</a>  <a th:href="@{/user/logout}" class=" label label-danger"><strong>    LOGOUT</strong> </a>
+                   Welcome 欢迎 <a >[[${session.username}]] !! </a>  <a th:href="@{/user/logout}" class=" label label-danger"><strong>    LOGOUT</strong> </a>
                </div>
             </div>
 

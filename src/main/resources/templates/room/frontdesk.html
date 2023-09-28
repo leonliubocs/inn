@@ -53,8 +53,9 @@
                                             <th> Checking Start <br/> 检查开始计时 </th>
                                             <th> Checking Complete <br/> 检查完毕 </th>
                                             <th> Maintenance Lost Record <br/> 维修丢失记录 </th>
-                                            <th> Need Maintain Status<br/>房间需要维修状态 </th>
-                                            <th> Ready to Sell Status <br/> 房间可售状态 </th>
+                                            <th> Modify Status to ‘Need Maintain Status’<br/> 修改房间状态为‘需要维修’ </th>
+                                            <th> Modify Status to ’Ready to Sell‘<br/> 修改房间状态为‘可以销售’ </th>
+
 
                                         </tr>
                                     </thead>
@@ -65,8 +66,8 @@
                                             <td><a class="btn btn-sm btn-primary" th:href="@{/room-completeClean/}+${room.getRoomId()}">Checking Start <br/> 检查开始计时</a></td>
                                             <td><a class="btn btn-sm btn-primary" th:href="@{/room-completeClean/}+${room.getRoomId()}">Checking Complete <br/> 检查完毕</a></td>
                                             <td><a class="btn btn-sm btn-danger" th:href="@{/room-completeClean/}+${room.getRoomId()}">Maintenance Lost Record <br/> 维修丢失记录</a></td>
-                                            <td><a class="btn btn-sm btn-danger" th:href="@{/room-completeClean/}+${room.getRoomId()}">Need Maintain Status<br/>房间需要维修状态</a></td>
-                                            <td><a class="btn btn-sm btn-primary" th:href="@{/room-completeClean/}+${room.getRoomId()}">Ready to Sell Status <br/> 房间可售状态</a></td>
+                                            <td><a class="btn btn-sm btn-danger" th:href="@{/room-completeClean/}+${room.getRoomId()}"> Modify Status to ‘Need Maintain Status’<br/> 修改房间状态为‘需要维修’</a></td>
+                                            <td><a class="btn btn-sm btn-primary" th:href="@{/room-completeClean/}+${room.getRoomId()}"> Modify Status to ’Ready to Sell‘<br/> 修改房间状态为‘可以销售’</a></td>
                                         </tr>
                                     </tbody>
                                 </table>
